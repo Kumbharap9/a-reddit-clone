@@ -8,7 +8,7 @@ pipeline {
         SCANNER_HOME = tool 'SonarQube Scanner'
         APP_NAME = "reddit-clone-pipeline"
         RELEASE = "1.0.0"
-        DOCKER_USER = "kumbharap9@gmail.com"
+        DOCKER_USER = "abhishekkumbhar"
         DOCKER_PASS = 'Kumbhar@9'
         IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
