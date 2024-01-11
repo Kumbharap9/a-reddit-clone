@@ -27,12 +27,10 @@ pipeline {
         }
         stage("Sonarqube Analysis") {
             steps {
-                sonar-scanner \
-  			-Dsonar.projectKey=new-Project \
-  			-Dsonar.sources=. \
-  			-Dsonar.host.url=http://65.0.102.72:9000 \
-  			-Dsonar.login=sqp_81b833f0bdcbf6874a4406901124fe9fb8e0e6b1
-                
+        	withSonarQubeEnv('SonarQube-Server') {
+                    sh '''$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Reddit-Clone-CI \
+                    -Dsonar.projectKey=Reddit-Clone-CI'''
+                }               
             }
         }
         stage("Quality Gate") {
