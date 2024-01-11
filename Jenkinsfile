@@ -32,7 +32,7 @@ pipeline {
   			-Dsonar.sources=. \
   			-Dsonar.host.url=http://65.0.102.72:9000 \
   			-Dsonar.login=sqp_81b833f0bdcbf6874a4406901124fe9fb8e0e6b1
-                }
+                
             }
         }
         stage("Quality Gate") {
